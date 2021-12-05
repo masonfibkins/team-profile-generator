@@ -4,5 +4,5 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,macos,node
 
 # General
+node_modules
 .DS_Store
-
