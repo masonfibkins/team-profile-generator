@@ -159,9 +159,25 @@ const addEmployee = () => {
             message: 'Add more team members?',
             default: false
         }
-
-
     ])
+    .then(employeeData => {
+        let {name, id, email, role, github, school, confirmAddEmployee} = employeeData;
+        let employee;
+
+        if(role === "Engineer"){
+            employee = new Engineer(name, id, email, github);
+            console.log(employee);
+        }else if(role === "Intern"){
+            employee = new Intern(name, id, email, school);
+        }
+        teamArray.push(employee);
+        if(confirmAddEmployee){
+            return addEmployee(teamArray);
+        }else{
+            return teamArray;
+        }
+
+    })
 
 };
 
